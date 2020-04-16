@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>˷юӋեʾ}</title>
+    <style type="text/css">
+     ul>li{
+         list-style: none;
+     }
+       /* ࠉչߪ*/
+      .switch-open
+      {
+          margin-left:-12px;
+          border:6px solid transparent;
+          display:inline-block;
+          width:0px;
+          height:0px;
+          border-top-color: black;
+ 
+      }
+       /* չߪΪҏ*/
+     .switch-close
+     {
+         margin-left:-12px;
+         border:6px solid transparent;
+         display:inline-block;
+         width:0px;
+         height:0px;
+         border-left-color: black;
+         margin-bottom: 2px;
+ 
+     }
+       /* لҤCheckBoxҹʽ*/
+     input[type='checkbox']{
+         width: 20px;
+         height: 20px;
+ 
+         -webkit-appearance:none;
+         -moz-appearance: none;
+         border: 1px solid #c9c9c9;
+         border-radius: 3px;
+         outline: none;
+         color:white;
+         text-align: center;
+     }
+     input[type='checkbox']:before
+     {
+         content: ' ';
+         color:transparent;
+     }
+     input[type=checkbox]:checked{
+         background-color: #30add6;
+     }
+     input[type=checkbox]:checked:before{
+         content: '';
+         color:white;
+         font-weight: bold;
+     }
+ 
+ 
+    </style>
+</head>
+<body>
+<div class="warp">
+    <ul id="container">
+    </ul>
+</div>
+ 
+ 
+<script type="text/javascript">
+ 
+    //ޡٹ
+    var json={
+        '家族树':{
+            '自己家族树':null,
+            '其他家族树':{
+                '家族树1':null,
+                '家族树2':null,
+                '家族树3':null
+                
+            },
+           
+        },
+        '动态消息':{
+            '刘丽':null,
+            '刘芳':null,
+            'A姐':null,
+            '张老师':null,
+            '李教授':null
+        },
+        '个人中心' :null
+            
+            
+    };
+ 
+//֢oʺԉDOM
+    function generate(json,par)
+    {
+        for(var attr in json)
+        {
+            var ele=document.createElement('li');
+            if(!json[attr])
+                ele.innerHTML=' <input type="checkbox"></input>'+attr;
+            else
+            {
+                ele.innerHTML='<span><span class="switch-open" Ǐnclick="toggle(this)"></span><input type="checkbox" Ǐnclick="checkChange(this)"></input>'+attr+'</span>';
+                var nextpar=document.createElement('ul');
+                ele.appendChild(nextpar);
+                generate(json[attr],nextpar);
+            }
+            par.appendChild(ele);
+        }
+    }
+    generate(json,document.getElementById('container'));
+ 
+    //Ԧmչߪۍ˕ǰ
+function toggle(eve)
+{
+    var par=eve.parentNode.nextElementSibling;
+    if(par.style.display=='none')
+    {
+        par.style.display='block';
+        eve.className='switch-open';
+ 
+    }
+    else
+    {
+        par.style.display='none';
+        eve.className='switch-close';
+    }
+}
+ 
+//Ԧmȫҿٴѡۍȫҿһѡ
+    function checkChange(eve)
+    {
+        var oul=eve.parentNode.nextElementSibling;
+        if(eve.checked)
+        {
+                for(var i=0;i<oul.querySelectorAll('input').length;i++)
+                {
+                    oul.querySelectorAll('input')[i].checked=true;
+                }
+        }
+        else
+        {
+            for(var i=0;i<oul.querySelectorAll('input').length;i++)
+            {
+                oul.querySelectorAll('input')[i].checked=false;
+            }
+        }
+    }
+</script>
+ 
+ 
+ 
+</body>
+</html>

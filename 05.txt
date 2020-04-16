@@ -1,0 +1,78 @@
+
+ 
+ 
+ 
+ 
+    <html>
+<head>
+ <tile>家族树树形结构界面</title>
+ </head>
+ <body>
+ <table border="3" bordercolor="green">
+ <tr>
+  <tr bgcolor="pink">
+ <th>动态消息</th>
+ <th>家族树</th>
+ <th>个人中心</th>
+ <th>加入家族树</th>
+ <th>创建家族树</th>
+ </tr>
+ <tr>
+ <tr bgcolor="white">
+    <td>刘丽</td>
+    <td>自己家族树</td>
+    <td>昵称、用户名</td>
+    <td rowspan="2">导师：张三</td>
+    <td>2016级博士生：天一、王二、吴五</td>
+  </tr>
+  <tr>
+  <td>刘芳</td>
+  <td rowspan="2">其他家族树</td>
+  <td>现状</td>
+  <td>2015级硕士生：李四、王五、许六</td>
+ </tr>
+ <tr bgcolor="white">
+ <td>A姐</td>
+ <td>我的收藏</td>
+ <td></td>
+ <td>2016级硕士生：刘一、李二、李三</td>
+ </tr>
+ <tr>
+ <td>张老师</td>
+ <td>家族树1</td>
+ <td>我的内推</td>
+ <td></td>
+ <td>2017级本科生：刘六、琪七、司四</td>
+ </tr>
+ 
+ <tr>
+ <td>李教授</td>
+ <td>家族树2</td>
+ <td>我的音乐盒</td>
+ <td></td>
+ <td></td>
+ </tr>
+ 
+ <tr bgcolor="white">
+ <td><FONT color="black"></td></FONT>
+ <td><FONT color="black">家族树3</td></FONT>
+ <td><FONT color="black">设置</td></FONT>
+ <td><FONT color="black"></td></FONT>
+ <td><FONT color="black"></td></FONT>
+ </tr>
+ <tr bgcolor="white">
+ <td>返回</td>
+  <td>点赞数</td>
+   <td>切换</td>
+    <td>天气</td>
+      
+ <td>退出</td>
+ </tr>
+ </table>
+ </body>
+ </html>
+ 
+ 
+ 
+ 
+    
